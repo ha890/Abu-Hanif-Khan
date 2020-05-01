@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include "screen.h"
 #include "comm.h"
-//#include "sound.h"
+#include "sound.h"
 
 int main(void){
 	Position cur = getscreensize();   // get screensize
@@ -40,10 +40,10 @@ int main(void){
 	clearscreen();
 	printf("color is set back to default\n");
 	getchar();
-	//FILE *fp = fopen("test.wav", "r"); // open the file in read-only
-	//WAVheader h = readwavhdr(fp);
-	//fclose(fp);
-	//displaywavhdr(h);
+	FILE *fp = fopen("test.wav", "r"); // open the file in read-only
+	WAVheader h = readwavhdr(fp);
+	fclose(fp);
+	displaywavhdr(h);
 
 /*
 	setfgcolor(CYAN);
